@@ -9,6 +9,8 @@ namespace TruongNgocThanh_BigSchool.Models
     [Table("Course")]
     public partial class Course
     {
+        internal string Name;
+
         public int Id { get; set; }
 
         [Required]
@@ -23,7 +25,7 @@ namespace TruongNgocThanh_BigSchool.Models
 
         public int CategoryId { get; set; }
 
-        //public virtual Category Category { get; set; }
+        public virtual Category Category { get; set; }
         public List<Category> ListCategory = new List<Category>();
     }
 }

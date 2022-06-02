@@ -21,19 +21,28 @@ namespace TruongNgocThanh_BigSchool.Controllers
         }
         [Authorize]
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public ActionResult Create(Course objCourse)
         {
             BigSchoolContext context = new BigSchoolContext();
 
+            // Không xét valid LectureId vì bằng user đăng nhập
+            ModelState.Remove("LectureId");
+            if (!ModelState.IsValid)
+            {
+                objCourse.ListCategory = context.Categories.ToList();
+                return View("Create", objCourse);
+            }
+
             //lay login  user tu id
-            ApplicationUser user = System.Web.HttpContext.Current.GetOwinContext().GetUserManager<ApplicationUserManager>().
+            ApplicationUser user = 
+                System.Web.HttpContext.Current.GetOwinContext().GetUserManager<ApplicationUserManager>().
                 FindById(System.Web.HttpContext.Current.User.Identity.GetUserId());
             objCourse.LectureId = user.Id;
             // add vao csdl
             context.Courses.Add(objCourse);
             context.SaveChanges();
             //context
-            ///asdhasdjasjkdasjdjasj
             return RedirectToAction("Index", "Home");
         }
     }
