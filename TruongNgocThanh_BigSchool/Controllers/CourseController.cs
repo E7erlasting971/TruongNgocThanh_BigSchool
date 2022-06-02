@@ -33,7 +33,7 @@ namespace TruongNgocThanh_BigSchool.Controllers
             context.Courses.Add(objCourse);
             context.SaveChanges();
             //context
-            ///asdhasdjasjkdasjdjasjkdas
+            ///asdhasdjasjkdasjdjasj
             return RedirectToAction("Index", "Home");
         }
     }
