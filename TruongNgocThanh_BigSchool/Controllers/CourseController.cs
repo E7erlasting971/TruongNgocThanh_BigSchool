@@ -32,7 +32,8 @@ namespace TruongNgocThanh_BigSchool.Controllers
             // add vao csdl
             context.Courses.Add(objCourse);
             context.SaveChanges();
-
+            //context
+            ///asdhasdjasjkdasjdjasjkdas
             return RedirectToAction("Index", "Home");
         }
     }
