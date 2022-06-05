@@ -18,6 +18,7 @@ namespace TruongNgocThanh_BigSchool.Controllers
             foreach(Course x in upcommingCourse)
             {
                 ApplicationUser user = System.Web.HttpContext.Current.GetOwinContext().GetUserManager<ApplicationUserManager>().FindById(x.LecturerId);
+
                 //x.Name = user.Name;
             }
             return View(upcommingCourse);

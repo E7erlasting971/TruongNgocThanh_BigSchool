@@ -9,7 +9,7 @@
         @foreach (var course in Model)
         {
             <li>
-                @course.Datetime.ToString("dd/MM/yyyy HH:mm") 
+                @course.Datetime.ToString("dd/MM/yyyy HH:mm") @*- @course.Name*@
             </li>
         }
     </ul>
