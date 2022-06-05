@@ -9,13 +9,11 @@ namespace TruongNgocThanh_BigSchool.Models
     [Table("Course")]
     public partial class Course
     {
-        internal string Name;
-
         public int Id { get; set; }
 
         [Required]
         [StringLength(128)]
-        public string LectureId { get; set; }
+        public string LecturerId { get; set; }
 
         [Required]
         [StringLength(255)]

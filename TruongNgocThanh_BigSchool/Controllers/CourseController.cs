@@ -26,8 +26,8 @@ namespace TruongNgocThanh_BigSchool.Controllers
         {
             BigSchoolContext context = new BigSchoolContext();
 
-            // Không xét valid LectureId vì bằng user đăng nhập
-            ModelState.Remove("LectureId");
+            // Không xét valid LecturerId vì bằng user đăng nhập
+            ModelState.Remove("LecturerId");
             if (!ModelState.IsValid)
             {
                 objCourse.ListCategory = context.Categories.ToList();
@@ -38,7 +38,7 @@ namespace TruongNgocThanh_BigSchool.Controllers
             ApplicationUser user = 
                 System.Web.HttpContext.Current.GetOwinContext().GetUserManager<ApplicationUserManager>().
                 FindById(System.Web.HttpContext.Current.User.Identity.GetUserId());
-            objCourse.LectureId = user.Id;
+            objCourse.LecturerId = user.Id;
             // add vao csdl
             context.Courses.Add(objCourse);
             context.SaveChanges();

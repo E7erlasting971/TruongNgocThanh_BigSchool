@@ -17,8 +17,8 @@ namespace TruongNgocThanh_BigSchool.Controllers
             var upcommingCourse = context.Courses.Where(p => p.Datetime > DateTime.Now).OrderBy(p => p.Datetime).ToList();
             foreach(Course x in upcommingCourse)
             {
-                ApplicationUser user = System.Web.HttpContext.Current.GetOwinContext().GetUserManager<ApplicationUserManager>().FindById(x.LectureId);
-                x.Name = user.Name;
+                ApplicationUser user = System.Web.HttpContext.Current.GetOwinContext().GetUserManager<ApplicationUserManager>().FindById(x.LecturerId);
+                //x.Name = user.Name;
             }
             return View(upcommingCourse);
         }
