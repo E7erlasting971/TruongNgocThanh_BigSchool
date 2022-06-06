@@ -5,6 +5,7 @@ namespace TruongNgocThanh_BigSchool.Models
     using System.ComponentModel.DataAnnotations;
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
+    using System.Linq;
 
     [Table("Course")]
     public partial class Course
@@ -36,7 +37,11 @@ namespace TruongNgocThanh_BigSchool.Models
 
         public List<Category> ListCategory = new List<Category>();
 
-        
+        public List<Category> ListAll()
+        {
+            BigSchoolContext context = new BigSchoolContext();
+            return context.Categories.ToList();
+        }
     }
     public partial class Course
     {

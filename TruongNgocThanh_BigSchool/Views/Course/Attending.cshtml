@@ -1,10 +1,11 @@
 ﻿@model IEnumerable<TruongNgocThanh_BigSchool.Models.Course>
 
 @{
-    ViewBag.Title = "ListMine";
+    ViewBag.Title = "Attending";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
+<h2>Attending</h2>
 <div class="row">
     <ul class="course">
         @foreach (var course in Model)
@@ -22,14 +23,14 @@
                     <span class="lecture">
                         @course.LectureName
                     </span>
-                    <br/>
+                    <br />
                     <span class="category">
                         @course.Category.Name
                     </span>
                 </div>
                 <div class="action">
-                    <a href="~/Course/DeleteMine?id=@course.Id">Delete</a>
-                    <a href="~/Course/EditMine?id=@course.Id">Edit</a>
+                    <a href="">Edit</a>
+                    <a href="">Delete</a>
                 </div>
             </li>
         }

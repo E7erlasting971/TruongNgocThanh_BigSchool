@@ -260,6 +260,8 @@
     <Content Include="Views\Course\ListMine.cshtml" />
     <Content Include="Views\Course\Create.cshtml" />
     <Content Include="Views\Course\LectureIamGoing.cshtml" />
+    <Content Include="Views\Course\Attending.cshtml" />
+    <Content Include="Views\Course\EditMine.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
