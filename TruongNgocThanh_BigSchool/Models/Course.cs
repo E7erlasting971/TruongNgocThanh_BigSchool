@@ -29,13 +29,22 @@ namespace TruongNgocThanh_BigSchool.Models
 
         public int CategoryId { get; set; }
 
-        [StringLength(255)]
-        public string LectureName { get; set; }
-
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Attendance> Attendances { get; set; }
 
         public virtual Category Category { get; set; }
+
         public List<Category> ListCategory = new List<Category>();
+
+        
+    }
+    public partial class Course
+    {
+        public string Name;
+        public string LectureName;
+
+        public bool IsLogin = false;
+        public bool IsShowGoing = false;
+        public bool IsShowFollow = false;
     }
 }
