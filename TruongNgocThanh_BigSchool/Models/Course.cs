@@ -42,9 +42,6 @@ namespace TruongNgocThanh_BigSchool.Models
             BigSchoolContext context = new BigSchoolContext();
             return context.Categories.ToList();
         }
-    }
-    public partial class Course
-    {
         public string Name;
         public string LectureName;
 

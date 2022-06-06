@@ -1,0 +1,16 @@
+Install-Package Microsoft.AspNet.WebApi.WebHost
+
+ public List<Category> ListCategory = new List<Category>();
+
+        public string Name;
+        public string LectureName;
+        public virtual Category Category { get; set; }
+
+        public bool IsLogin = false;
+        public bool IsShowGoing = false;
+        public bool IsShowFollow = false;
+public List<Category> ListAll()
+        {
+            BigSchoolContext context = new BigSchoolContext();
+            return context.Categories.ToList();
+        }
