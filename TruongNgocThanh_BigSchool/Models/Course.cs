@@ -29,6 +29,9 @@ namespace TruongNgocThanh_BigSchool.Models
 
         public int CategoryId { get; set; }
 
+        [StringLength(255)]
+        public string LectureName { get; set; }
+
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Attendance> Attendances { get; set; }
 

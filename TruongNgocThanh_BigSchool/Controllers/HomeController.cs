@@ -19,7 +19,7 @@ namespace TruongNgocThanh_BigSchool.Controllers
             {
                 ApplicationUser user = System.Web.HttpContext.Current.GetOwinContext().GetUserManager<ApplicationUserManager>().FindById(x.LecturerId);
 
-                //x.Name = user.Name;
+                x.LectureName = user.Name;
             }
             return View(upcommingCourse);
         }
