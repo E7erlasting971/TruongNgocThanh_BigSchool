@@ -34,13 +34,13 @@
             @if (Request.IsAuthenticated)
             {
                 @Html.AntiForgeryToken()
-                using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { id = "logoutForm" }))
+                @*using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { id = "logoutForm" }))
                 {
                     @Html.AntiForgeryToken()
                     <li><a href="javascript:document.getElementById('logoutForm').submit()">Log off</a></li>
 
-                }
-                @*<li>@Html.ActionLink("Log off", "LogOff", "Account", routeValues: null, htmlAttributes: new { id = "logoffLink" })</li>*@
+                }*@
+                <li>@Html.ActionLink("Log off", "LogOff", "Account", routeValues: null, htmlAttributes: new { id = "logoffLink" })</li>
             }
             else
             {
