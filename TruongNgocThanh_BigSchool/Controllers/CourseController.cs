@@ -11,6 +11,7 @@ namespace TruongNgocThanh_BigSchool.Controllers
 {
     public class CourseController : Controller
     {
+        // Truong Ngoc Thanh 1911065399
         // GET: Course
         public ActionResult Create()
         {
