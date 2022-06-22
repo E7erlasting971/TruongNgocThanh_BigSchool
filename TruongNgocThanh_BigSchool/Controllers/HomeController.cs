@@ -11,13 +11,25 @@ namespace TruongNgocThanh_BigSchool.Controllers
 {
     public class HomeController : Controller
     {
-        public ActionResult Index()
+        public ActionResult Index(string SearchString)
         {
             BigSchoolContext context = new BigSchoolContext();
             var upcommingCourse = context.Courses.Where(p => p.Datetime >
             DateTime.Now).OrderBy(p => p.Datetime).ToList();
             //lấy user login hiện tại
-
+            if(SearchString != null)
+            {
+                //var tp = context.Courses.Where();
+                ApplicationUser currentUser = System.Web.HttpContext.Current.GetOwinContext().GetUserManager<ApplicationUserManager>()
+                .FindById(System.Web.HttpContext.Current.User.Identity.GetUserId());
+                var courses = context.Courses.Where(c => c.LecturerId == currentUser.Id || c.Place.Contains(SearchString)).ToList();
+                foreach (Course i in courses)
+                {
+                    i.LectureName = currentUser.Name;
+                }
+                return View(courses);
+            }
+           
             var userID = User.Identity.GetUserId();
             foreach (Course i in upcommingCourse)
             {

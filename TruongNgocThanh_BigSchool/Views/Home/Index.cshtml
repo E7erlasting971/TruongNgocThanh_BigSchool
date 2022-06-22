@@ -5,7 +5,14 @@
 }
 
 <div class="row">
+    @using (Html.BeginForm("Index", "Home", FormMethod.Get))
+    {
+        <p>
+                <input type="text" name="SearchString"> <button type="submit" value="Search">Tìm kiếm</button>
+        </p>
+    }
     <ul class="course">
+
         @foreach (var course in Model)
         {
             <li>
@@ -19,6 +26,7 @@
                 </div>
                 <div class="details">
                     <span class="lecture">
+                        @course.LectureName
                         @course.Name
                         @if (course.IsLogin)
                         {
@@ -53,12 +61,6 @@
                 </div>
             </li>
         }
-        @*@foreach (var course in Model)
-            {
-                <li>
-                    @course.Datetime.ToString("dd/MM/yyyy HH:mm") - @course.Name
-                </li>
-            }*@
     </ul>
     @section scripts{
         <script>

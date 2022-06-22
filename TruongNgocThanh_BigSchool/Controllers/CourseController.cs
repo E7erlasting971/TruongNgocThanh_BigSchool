@@ -146,5 +146,6 @@ namespace TruongNgocThanh_BigSchool.Controllers
             }
             return View(courses);
         }
+        
     }
 }
